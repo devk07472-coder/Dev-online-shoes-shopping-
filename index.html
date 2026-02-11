@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Deva Shoe Junction | Premium Store</title>
+    <link href="https://fonts.googleapis.com/css2?family=Monoton&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body { margin: 0; padding: 0; font-family: 'Poppins', sans-serif; background: #0a0a0a; color: #fff; overflow-x: hidden; }
+
+        /* Top Banner */
+        .offer-banner { background: linear-gradient(90deg, #ffdd57, #f39c12); color: #000; text-align: center; padding: 8px 0; font-size: 0.75rem; font-weight: bold; text-transform: uppercase; }
+
+        /* Header */
+        header { padding: 20px 10px; text-align: center; background: #111; border-bottom: 2px solid #ffdd57; }
+        .shop-name { font-family: 'Monoton', cursive; font-size: 2.2rem; color: #ffdd57; text-shadow: 0 0 10px #ffdd57; margin: 0; }
+
+        /* Grid Setup */
+        .container { 
+            display: grid; 
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 12px; 
+            padding: 10px; 
+            max-width: 1000px; 
+            margin: 0 auto; 
+        }
+        @media (min-width: 768px) { .container { grid-template-columns: repeat(4, 1fr); } }
+
+        .card { 
+            background: #1a1a1a; 
+            border-radius: 12px; 
+            padding: 12px; 
+            text-align: center; 
+            border: 1px solid #222; 
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 280px; 
+        }
+        .card img { width: 100%; height: 130px; object-fit: cover; border-radius: 8px; margin-bottom: 10px; }
+        .card h3 { font-size: 0.85rem; margin: 5px 0; color: #eee; height: 35px; overflow: hidden; }
+        .price { font-size: 1.1rem; color: #ffdd57; font-weight: bold; margin-bottom: 7px; }
+        .buy-btn { background: #ffdd57; color: #000; border: none; width: 100%; padding: 10px; border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 0.8rem; }
+
+        /* Reviews */
+        .reviews { padding: 30px 15px; background: #111; text-align: center; }
+        .review-card { background: #1a1a1a; padding: 15px; border-radius: 10px; margin: 10px 0; border: 1px solid #333; font-size: 0.8rem; }
+
+        /* Modal */
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); justify-content: center; align-items: center; z-index: 10000; }
+        .modal-content { background: #fff; color: #333; padding: 20px; border-radius: 15px; width: 85%; max-width: 350px; position: relative; max-height: 90vh; overflow-y: auto; }
+        .close-btn { position: absolute; top: 10px; right: 15px; font-size: 24px; color: #ff3333; border: none; background: none; cursor: pointer; }
+        input, select { width: 100%; padding: 10px; margin: 6px 0; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box; }
+        .submit-wa { background: #25D366; color: white; border: none; width: 100%; padding: 12px; border-radius: 8px; font-size: 1rem; font-weight: bold; cursor: pointer; margin-top: 10px; }
+
+        footer { background: #000; padding: 30px 15px; text-align: center; border-top: 1px solid #222; }
+        .map-btn { background: #4285F4; color: white; padding: 10px 20px; border-radius: 20px; text-decoration: none; font-weight: bold; display: inline-block; margin: 10px 0; }
+        .insta-btn { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); color: white; padding: 10px 20px; border-radius: 20px; text-decoration: none; font-weight: bold; display: inline-block; }
+    </style>
+</head>
+<body>
+
+<div class="offer-banner"><marquee scrollamount="5">🔥 Special Offer: Buy 2 Get 1 Free | Limited Time Only 🔥</marquee></div>
+
+<header>
+    <h1 class="shop-name">DEVA SHOE JUNCTION</h1>
+    <p style="color: #666; font-size: 0.75rem;">👟PREMIUM QUALITY FOOTWEAR👟</p>
+</header>
+
+<div class="container">
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff" alt="Shoe">
+        <h3>Red Sports Pro Max</h3>
+        <p class="price">₹299</p>
+        <button class="buy-btn" onclick="openForm('Red Sports Pro Max', '₹299')">Order Now</button>
+    </div>
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a" alt="Shoe">
+        <h3>Ice White Sneaker</h3>
+        <p class="price">₹499</p>
+        <button class="buy-btn" onclick="openForm('Ice White Sneaker', '₹499')">Order Now</button>
+    </div>
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa" alt="Shoe">
+        <h3>Neon Gym Running Shoes</h3>
+        <p class="price">₹799</p>
+        <button class="buy-btn" onclick="openForm('Neon Gym Running Shoes', '₹799')">Order Now</button>
+    </div>
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1460353581641-37baddab0fa2" alt="Shoe">
+        <h3>Casual Grey Walk</h3>
+        <p class="price">₹999</p>
+        <button class="buy-btn" onclick="openForm('Casual Grey Walk', '₹999')">Order Now</button>
+    </div>
+       <div class="card">
+        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff" alt="Shoe">
+        <h3>Red Pro Max</h3>
+        <p class="price">₹599</p>
+        <button class="buy-btn" onclick="openForm('Red Pro Max', '₹599')">Order Now</button>
+    </div>
+<div class="card">
+        <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a" alt="Shoe">
+        <h3> White Shoes</h3>
+        <p class="price">₹250</p>
+        <button class="buy-btn" onclick="openForm('White Shoes', '₹250')">Order Now</button>
+    </div>
+<div class="card">
+        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff" alt="Shoe">
+        <h3>Red Sports</h3>
+        <p class="price">₹350</p>
+        <button class="buy-btn" onclick="openForm('Red Sports ', '₹350')">Order Now</button>
+    </div>
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1460353581641-37baddab0fa2" alt="Shoe">
+        <h3>Grey Formal Shoes</h3>
+        <p class="price">₹150</p>
+        <button class="buy-btn" onclick="openForm('Grey Formal Shoes', '₹150')">Order Now</button>
+    </div>
+<div class="card">
+        <img src="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa" alt="Shoe">
+        <h3>Light Green Shoes</h3>
+        <p class="price">₹450</p>
+        <button class="buy-btn" onclick="openForm('Light Green Shoes', '₹450')">Order Now</button>
+    </div>
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a" alt="Shoe">
+        <h3> White FormalShoes</h3>
+        <p class="price">₹350</p>
+        <button class="buy-btn" onclick="openForm('White Shoes', '₹350')">Order Now</button>
+    </div>
+</div>
+
+<div class="reviews">
+    <h3 style="color: #ffdd57;">Customer Feedback ⭐</h3>
+    <div class="review-card">"⭐⭐⭐Wadrafnagar me sabse saste aur acche jootey!" - <b>Arun M.</b></div>
+</div>
+
+<div id="orderModal" class="modal">
+    <div class="modal-content">
+        <button class="close-btn" onclick="closeForm()">×</button>
+        <h3 style="margin-top:0">Order Details</h3>
+        <p id="itemTitle" style="font-weight:bold; color:#f39c12;"></p>
+        
+        <input type="text" id="custName" placeholder="Aapka Naam" required>
+        <input type="tel" id="custPhone" placeholder="WhatsApp No." required>
+        <input type="text" id="custAddr" placeholder="Gaon/Mohalla/Address" required>
+        
+        <select id="custSize" required>
+            <option value="">Size Chunein</option>
+            <option value="6">6</option><option value="7">7</option>
+            <option value="8">8</option><option value="9">9</option><option value="10">10</option>
+        </select>
+        
+        <select id="custPiece" required>
+            <option value="">Quantity (Kitne Piece)</option>
+            <option value="1">1</option><option value="2">2</option>
+            <option value="3">3</option><option value="4">4</option>
+        </select>
+
+        <select id="custState" onchange="getDistricts()" required>
+            <option value="">State Chunein</option>
+            <option value="Chhattisgarh">Chhattisgarh</option>
+            <option value="UP">Uttar Pradesh</option>
+            <option value="Bihar">Bihar</option>
+            <option value="Delhi">Delhi</option>
+        </select>
+
+        <select id="custDist" required>
+            <option value="">District Chunein</option>
+        </select>
+
+        <input type="text" id="custBlock" placeholder="Block Name" required>
+        <input type="number" id="custPin" placeholder="Pincode" required>
+        
+        <button class="submit-wa" onclick="sendToWA()">🙏 ORDER NOW 🙏</button>
+    </div>
+</div>
+
+<footer>
+    <div class="address-box">
+        <strong>📍 Visit Our Shop:</strong><br>
+        Deva Shoe Junction, Main Banaras Road,<br>
+        Wadrafnagar, Chhattisgarh-497223
+    </div>
+    <a href="https://maps.app.goo.gl/BwjSgV58aVznukvV6?g_st=ac" target="_blank" class="map-btn">📍 View on Google Maps</a><br>
+    <a href="https://www.instagram.com/dev_alone95" target="_blank" class="insta-btn">Follow on Instagram 📸</a>
+    <p style="font-size: 0.8rem; color: #444; margin-top: 20px;">© 2026 Deva SHOE JUNCTION</p>
+</footer>
+
+<script>
+    let n = ""; let p = "";
+
+    function openForm(name, price) {
+        n = name; p = price;
+        document.getElementById('itemTitle').innerText = name + " | " + price;
+        document.getElementById('orderModal').style.display = 'flex';
+    }
+
+    function closeForm() {
+        document.getElementById('orderModal').style.display = 'none';
+    }
+
+    function getDistricts() {
+        const s = document.getElementById('custState').value;
+        const d = document.getElementById('custDist');
+        d.innerHTML = '<option value="">District Chunein</option>';
+        
+        const list = { 
+            "Chhattisgarh": ["Balrampur", "Surajpur", "Sarguja", "Raipur", "Bilaspur"], 
+            "UP": ["Lucknow", "Varanasi", "Noida", "Sonbhadra"], 
+            "Bihar": ["Patna", "Gaya", "Buxar", "Rohtas"], 
+            "Delhi": ["New Delhi", "South Delhi"] 
+        };
+
+        if(list[s]) {
+            list[s].forEach(city => {
+                let opt = document.createElement('option');
+                opt.value = city; opt.innerText = city;
+                d.appendChild(opt);
+            });
+        }
+    }
+
+    function sendToWA() {
+        const myNo = "918435725294"; 
+        
+        const name = document.getElementById('custName').value;
+        const phone = document.getElementById('custPhone').value;
+        const addr = document.getElementById('custAddr').value;
+        const sz = document.getElementById('custSize').value;
+        const quan = document.getElementById('custPiece').value; // Quantity fixed
+        const st = document.getElementById('custState').value;
+        const dt = document.getElementById('custDist').value;
+        const blk = document.getElementById('custBlock').value; // Block fixed
+        const pin = document.getElementById('custPin').value;
+
+        if(!name || !phone || !addr || !sz || !quan || !st || !dt || !blk || !pin) { 
+            alert("Bhai, saari details bharna zaroori hai!"); 
+            return; 
+        }
+
+        const text = `*NEW ORDER FROM WEBSITE*%0A` +
+                     `--------------------------%0A` +
+                     `*Item:* ${n}%0A` +
+                     `*Price:* ${p}%0A` +
+                     `*Quantity:* ${quan}%0A` +
+                     `--------------------------%0A` +
+                     `*Name:* ${name}%0A` +
+                     `*Phone:* ${phone}%0A` +
+                     `*Size:* ${sz}%0A` +
+                     `*Address:* ${addr}%0A` +
+                     `*Block:* ${blk}%0A` +
+                     `*District:* ${dt}, ${st}%0A` +
+                     `*Pincode:* ${pin}`;
+
+        window.open(`https://wa.me/${myNo}?text=${text}`, '_blank');
+    }
+</script>
+
+</body>
+</html>
